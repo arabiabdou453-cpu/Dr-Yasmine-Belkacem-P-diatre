@@ -1,11 +1,7 @@
-node_modules/
-.env
-.env.*
-npm-debug.log*
-.DS_Store
-
-coverage/
-dist/
-build/
-
+node_modules
+.next
+out
 *.log
+*.tsbuildinfo
+
+.vercel
