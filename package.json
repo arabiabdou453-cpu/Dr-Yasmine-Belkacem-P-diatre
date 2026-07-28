@@ -1,31 +1,28 @@
 {
-  "name": "security-test",
+  "name": "pediatre-yasmine",
   "version": "1.0.0",
-  "description": "Enterprise DevSecOps Security Pipeline",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"No tests configured\" && exit 0",
-    "prepare": "husky install",
-
-    "security:gitleaks": "gitleaks detect --source . --no-banner",
-
-    "security:semgrep": "semgrep --config p/default .",
-
-    "security:npm": "npm audit --audit-level=high || echo \"⚠️ npm audit skipped: registry unavailable\"",
-
-    "security:trivy": "trivy fs --timeout 10m --severity HIGH,CRITICAL .",
-
-    "security:all": "npm run security:gitleaks && npm run security:semgrep && npm run security:npm && npm run security:trivy"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/*.test.mjs"
   },
-  "keywords": [
-    "devsecops",
-    "security",
-    "secure-sdlc"
-  ],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "dependencies": {
+    "next": "16.2.12",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
   "devDependencies": {
-    "husky": "^9.1.7"
+    "@types/node": "^20.19.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "eslint": "^9.39.0",
+    "eslint-config-next": "16.2.10",
+    "prettier": "3.9.5",
+    "typescript": "^5.9.0"
   }
 }
