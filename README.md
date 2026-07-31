@@ -41,7 +41,7 @@ Ce projet est développé avec les dernières technologies du web pour garantir 
 ## 🚀 Liens Importants
 
 - **Site Web en Ligne :** [https://pediatre-yasmine.vercel.app/](https://pediatre-yasmine.vercel.app/)
-- **Code Source (GitHub) :** [https://github.com/arabiabdou453-cpu/Dr-Yasmine-Belkacem-P-diatre](https://github.com/arabiabdou453-cpu/arabiabdou453-cpu-Dr.-Yasmine-Belkacem-P-diatre)
+- **Code Source (GitHub) :** [https://github.com/arabiabdou453-cpu/Dr-Yasmine-Belkacem-P-diatre](https://github.com/arabiabdou453-cpu/Dr-Yasmine-Belkacem-P-diatre)
 
 ---
 
@@ -56,7 +56,7 @@ Si vous souhaitez exécuter ce projet sur votre machine locale, suivez ces étap
 
 2. **Accéder au dossier du projet :**
    ```bash
-   cd aDr-Yasmine-Belkacem-P-diatre
+   cd Dr-Yasmine-Belkacem-P-diatre
    ```
 
 3. **Installer les dépendances :**
@@ -82,7 +82,7 @@ Si vous souhaitez exécuter ce projet sur votre machine locale, suivez ces étap
 
 Projet développé par **[arabiabdou453-cpu](https://github.com/arabiabdou453-cpu)**.
 
-Les contributions, les problèmes (issues) et les demandes de fonctionnalités (feature requests) sont les bienvenus ! N'hésitez pas à consulter la page des [issues](https://github.com/arabiabdou453-cpu/arabiabdou453-cpu-Dr.-Yasmine-Belkacem-P-diatre/issues) si vous souhaitez contribuer.
+Les contributions, les problèmes (issues) et les demandes de fonctionnalités (feature requests) sont les bienvenus ! N'hésitez pas à consulter la page des [issues](https://github.com/arabiabdou453-cpu/Dr-Yasmine-Belkacem-P-diatre/issues) si vous souhaitez contribuer.
 
 ---
 
