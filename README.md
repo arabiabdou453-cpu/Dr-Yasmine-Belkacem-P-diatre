@@ -4,7 +4,7 @@
   <a href="https://pediatre-yasmine.vercel.app/">
     <img src="https://img.shields.io/badge/🌍_Live_Demo-Visiter_le_site-2ea44f?style=for-the-badge" alt="Live Demo" />
   </a>
-  <a href="https://github.com/arabiabdou453-cpu/arabiabdou453-cpu-Dr.-Yasmine-Belkacem-P-diatre">
+  <a href="https://github.com/arabiabdou453-cpu/"Dr-Yasmine-Belkacem-P-diatre">
     <img src="https://img.shields.io/badge/💻_GitHub-Repository-181717?style=for-the-badge&logo=github" alt="GitHub Repo" />
   </a>
 </div>
@@ -41,7 +41,7 @@ Ce projet est développé avec les dernières technologies du web pour garantir 
 ## 🚀 Liens Importants
 
 - **Site Web en Ligne :** [https://pediatre-yasmine.vercel.app/](https://pediatre-yasmine.vercel.app/)
-- **Code Source (GitHub) :** [https://github.com/arabiabdou453-cpu/arabiabdou453-cpu-Dr.-Yasmine-Belkacem-P-diatre](https://github.com/arabiabdou453-cpu/arabiabdou453-cpu-Dr.-Yasmine-Belkacem-P-diatre)
+- **Code Source (GitHub) :** [https://github.com/arabiabdou453-cpu/Dr-Yasmine-Belkacem-P-diatre](https://github.com/arabiabdou453-cpu/arabiabdou453-cpu-Dr.-Yasmine-Belkacem-P-diatre)
 
 ---
 
@@ -51,12 +51,12 @@ Si vous souhaitez exécuter ce projet sur votre machine locale, suivez ces étap
 
 1. **Cloner le dépôt :**
    ```bash
-   git clone https://github.com/arabiabdou453-cpu/arabiabdou453-cpu-Dr.-Yasmine-Belkacem-P-diatre.git
+   git clone https://github.com/arabiabdou453-cpu/Dr-Yasmine-Belkacem-P-diatre.git
    ```
 
 2. **Accéder au dossier du projet :**
    ```bash
-   cd arabiabdou453-cpu-Dr.-Yasmine-Belkacem-P-diatre
+   cd aDr-Yasmine-Belkacem-P-diatre
    ```
 
 3. **Installer les dépendances :**
