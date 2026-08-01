@@ -105,7 +105,35 @@ test("desktop matches the reference viewport structure", async ({ page }) => {
   await expect(page.locator(".clinic-highlight")).toHaveCount(0);
   await expect(page.locator('a[href="tel:0555123456"]')).toBeVisible();
   await expect(page.locator("summary.navigation-toggle")).toBeHidden();
+  await expect(page.locator(".hero-media > img")).toHaveCSS("transform", "none");
   await expect(page.locator(".guarantee-footer")).toBeInViewport();
+
+  await page.screenshot({
+    animations: "disabled",
+    fullPage: false,
+    path: path.join(visualOutput, `${viewport.name}.png`),
+    scale: "css",
+  });
+});
+
+test("wide desktop keeps the reference canvas centered", async ({ page }) => {
+  const viewport = { name: "desktop-1536x900", width: 1536, height: 900 } as const;
+  await preparePage(page, viewport);
+
+  await expectHealthyLayout(page, viewport.width);
+  await expect(page.locator(".desktop-navigation")).toBeVisible();
+  await expect(page.locator(".round-action")).toBeVisible();
+
+  const canvas = await page.locator("main").boundingBox();
+  expect(canvas?.width).toBe(1308);
+  expect(canvas?.x).toBe(114);
+
+  const stats = await page.locator(".stats-band").boundingBox();
+  const footer = await page.locator(".guarantee-footer").boundingBox();
+  expect(stats?.width).toBe(1175);
+  expect(footer?.width).toBe(1175);
+  expect(stats?.x).toBe((canvas?.x ?? 0) + 47);
+  expect(footer?.x).toBe((canvas?.x ?? 0) + 47);
 
   await page.screenshot({
     animations: "disabled",
@@ -121,7 +149,11 @@ for (const viewport of mobileViewports) {
 
     await expectHealthyLayout(page, viewport.width);
     await expect(page.locator("summary.navigation-toggle")).toBeVisible();
+    await expect(page.locator(".round-action")).toBeVisible();
     await expect(page.locator('a[href="tel:0555123456"]')).toBeVisible();
+
+    const heroAsideIcon = await page.locator(".hero-aside-icon .icon").boundingBox();
+    expect(heroAsideIcon?.width ?? Number.POSITIVE_INFINITY).toBeLessThanOrEqual(30);
 
     const primaryActions = page.locator(".hero-actions .button");
     await expect(primaryActions).toHaveCount(2);

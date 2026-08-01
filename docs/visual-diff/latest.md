@@ -36,8 +36,8 @@ Samples were taken from interior pixels and homogeneous regions, not anti-aliase
 - Reference dimensions: 1308 × 1203
 - Implementation dimensions: 1308 × 1203
 - Total pixels: 1,573,524
-- Exact differing pixels: 1,456,111
-- Exact difference: 92.538214%
+- Exact differing pixels: 1,455,214
+- Exact difference: 92.481208%
 - Affected bounds: x=0..1307, y=0..1202
 - Screenshot: `test-results/visual/desktop-1308x1203.png`
 - Diff image: `test-results/visual/desktop-diff.png`
@@ -51,6 +51,10 @@ The exact metric intentionally counts every one-channel, one-level RGB differenc
 
 - Corrected: section sequence now matches the reference. The unreferenced clinic highlight was removed.
 - Corrected: header, hero, services, statistics, three-card information grid, and guarantee footer occupy the same 1308 × 1203 capture and follow the reference grid proportions.
+- Corrected: the hero image no longer uses the forced `scale(1.45)` crop; it is rendered proportionally across the hero canvas and re-cropped independently on mobile.
+- Corrected: the 1308 px reference canvas is centered on wide desktop viewports, so the statistics and guarantee bands retain equal outer spacing instead of ending early on the right.
+- Corrected: navigation switches to the mobile menu before links become crowded, and the WhatsApp action remains visible on mobile.
+- Corrected: the mobile hero callout and bear icon were reduced so the doctor/child image remains visible.
 - Remaining: `public/images/hero-pediatre.png` depicts a different doctor/child scene from the supplied reference. Its crop can be aligned, but its subjects and room cannot become identical without replacing the approved asset.
 - Remaining: `public/images/doctor-pediatre.webp` depicts a different portrait/background from the supplied reference.
 
@@ -77,4 +81,6 @@ No mobile reference exists, so no fabricated pixel-diff percentage is reported.
 | 390 × 844 | none                | 0             | visible/collapsible | visible `tel:` link | ≥44 px     |
 | 430 × 932 | none                | 0             | visible/collapsible | visible `tel:` link | ≥44 px     |
 
-Mobile screenshots are saved under `test-results/visual/`. The layout uses real reflow: stacked hero and calls to action, responsive trust/services/statistics grids, single-column information cards, and a single-column guarantee footer.
+Mobile screenshots are saved under `test-results/visual/`. Each mobile viewport also verifies a visible 44 px WhatsApp action and a hero callout icon no wider than 30 px. The layout uses real reflow: stacked hero and calls to action, responsive trust/services/statistics grids, single-column information cards, and a single-column guarantee footer.
+
+The 1536 × 900 wide-desktop regression test verifies a centered 1308 px canvas and 1175 px statistics/guarantee bands aligned 47 px from the canvas edge.
