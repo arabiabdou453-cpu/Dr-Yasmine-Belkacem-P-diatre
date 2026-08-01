@@ -20,6 +20,16 @@ const guarantees = [
 
 const statIcons: readonly IconName[] = ["clock", "users", "heart", "calendar", "pin"];
 
+const navigationItems = [
+  ["#accueil", "Accueil"],
+  ["#apropos", "À propos"],
+  ["#consultations", "Consultations"],
+  ["#services", "Soins & Services"],
+  ["#vaccination", "Vaccination"],
+  ["#conseils", "Conseils parents"],
+  ["#contact", "Contact"],
+] as const;
+
 export default function Home() {
   return (
     <main>
@@ -34,14 +44,12 @@ export default function Home() {
             <em>Spécialiste de la santé de l’enfant</em>
           </span>
         </a>
-        <nav aria-label="Navigation principale">
-          <a href="#accueil">Accueil</a>
-          <a href="#apropos">À propos</a>
-          <a href="#consultations">Consultations</a>
-          <a href="#services">Soins & Services</a>
-          <a href="#vaccination">Vaccination</a>
-          <a href="#conseils">Conseils parents</a>
-          <a href="#contact">Contact</a>
+        <nav className="desktop-navigation" aria-label="Navigation principale">
+          {navigationItems.map(([href, label]) => (
+            <a href={href} key={href}>
+              {label}
+            </a>
+          ))}
         </nav>
         <div className="header-actions">
           <a className="round-action" href="#contact" aria-label="Nous contacter">
@@ -51,6 +59,16 @@ export default function Home() {
             <Icon name="calendar" size={17} /> Prendre RDV
           </a>
         </div>
+        <details className="mobile-navigation">
+          <summary className="navigation-toggle">Menu</summary>
+          <nav aria-label="Navigation mobile">
+            {navigationItems.map(([href, label]) => (
+              <a href={href} key={href}>
+                {label}
+              </a>
+            ))}
+          </nav>
+        </details>
       </header>
 
       <section id="accueil" className="hero">
@@ -171,9 +189,18 @@ export default function Home() {
                 <span aria-hidden="true">
                   <Icon name={contact.icon} size={18} />
                 </span>
-                <small className={contact.emphasis ? "contact-emphasis" : undefined}>
-                  {contact.value}
-                </small>
+                {contact.icon === "phone" ? (
+                  <a
+                    className={contact.emphasis ? "contact-emphasis" : undefined}
+                    href="tel:0555123456"
+                  >
+                    {contact.value}
+                  </a>
+                ) : (
+                  <small className={contact.emphasis ? "contact-emphasis" : undefined}>
+                    {contact.value}
+                  </small>
+                )}
                 {contact.secondary ? <strong>{contact.secondary}</strong> : null}
               </p>
             ))}
@@ -190,26 +217,6 @@ export default function Home() {
             <button type="button">Voir sur la carte</button>
           </div>
         </article>
-      </section>
-
-      <section className="clinic-highlight">
-        <Image
-          src="/images/clinic-pediatre.png"
-          alt="Accueil lumineux du cabinet pédiatrique"
-          fill
-          sizes="100vw"
-        />
-        <div>
-          <p>UN CABINET PENSÉ POUR EUX</p>
-          <h2>
-            Un environnement rassurant
-            <br />
-            pour toute la famille.
-          </h2>
-          <a className="button button-primary" href="#rendez-vous">
-            Prendre rendez-vous
-          </a>
-        </div>
       </section>
 
       <footer className="guarantee-footer">

@@ -50,16 +50,19 @@ Ce projet est développé avec les dernières technologies du web pour garantir 
 Si vous souhaitez exécuter ce projet sur votre machine locale, suivez ces étapes :
 
 1. **Cloner le dépôt :**
+
    ```bash
    git clone https://github.com/arabiabdou453-cpu/Dr-Yasmine-Belkacem-P-diatre.git
    ```
 
 2. **Accéder au dossier du projet :**
+
    ```bash
    cd Dr-Yasmine-Belkacem-P-diatre
    ```
 
 3. **Installer les dépendances :**
+
    ```bash
    npm install
    # ou
@@ -67,6 +70,7 @@ Si vous souhaitez exécuter ce projet sur votre machine locale, suivez ces étap
    ```
 
 4. **Lancer le serveur de développement :**
+
    ```bash
    npm run dev
    # ou
