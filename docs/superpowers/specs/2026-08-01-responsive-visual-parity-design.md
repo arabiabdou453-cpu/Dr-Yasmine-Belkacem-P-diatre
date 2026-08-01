@@ -46,4 +46,3 @@ For desktop, validate the reference hash and dimensions before reading pixels. S
 ## Safety and verification
 
 Keep TypeScript strict and introduce no unsafe type escapes. The appointment form remains client-side demonstration behavior and must not claim to transmit medical data. Run formatting, lint, type checking, Node tests, Playwright tests, production build, dependency audit, and a changed-file secret scan before completion.
-

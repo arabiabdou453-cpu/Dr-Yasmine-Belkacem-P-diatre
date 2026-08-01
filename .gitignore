@@ -3,5 +3,7 @@ node_modules
 out
 *.log
 *.tsbuildinfo
+test-results/
+tmp/
 
 .vercel

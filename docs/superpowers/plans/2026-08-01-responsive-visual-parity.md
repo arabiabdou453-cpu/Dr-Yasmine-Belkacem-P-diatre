@@ -22,6 +22,7 @@
 ### Task 1: Deterministic visual test harness
 
 **Files:**
+
 - Modify: `package.json`
 - Modify: `package-lock.json`
 - Create: `playwright.config.ts`
@@ -29,6 +30,7 @@
 - Create: `scripts/visual-diff.mjs`
 
 **Interfaces:**
+
 - Consumes: production server at `http://127.0.0.1:3100` and optional `REFERENCE_IMAGE`.
 - Produces: screenshots under `test-results/visual/` and exact pixel metrics from `npm run visual:diff`.
 
@@ -55,10 +57,12 @@ Run `npm run test:e2e`; expect assertions for the clinic section, telephone sema
 ### Task 2: Reference-backed page structure
 
 **Files:**
+
 - Modify: `src/app/page.tsx`
 - Modify: `tests/page.test.mjs`
 
 **Interfaces:**
+
 - Consumes: `siteData`, `AppointmentForm`, and existing image assets.
 - Produces: desktop section order matching the reference and semantic mobile navigation/contact controls.
 
@@ -81,9 +85,11 @@ Run `npm test`; expect all source regression assertions to pass.
 ### Task 3: Consolidated desktop and mobile styling
 
 **Files:**
+
 - Modify: `src/app/globals.css`
 
 **Interfaces:**
+
 - Consumes: the stable class names emitted by `page.tsx`.
 - Produces: one non-conflicting desktop cascade and responsive rules at 1100, 720, and 380 pixels.
 
@@ -106,6 +112,7 @@ Run `npm run test:e2e`; expect all structural and interaction assertions to pass
 ### Task 4: Visual calibration and reports
 
 **Files:**
+
 - Create: `docs/visual-diff/latest.md`
 - Generate: `test-results/visual/desktop-1308x1203.png`
 - Generate: `test-results/visual/desktop-diff.png`
@@ -114,6 +121,7 @@ Run `npm run test:e2e`; expect all structural and interaction assertions to pass
 - Generate: `test-results/visual/mobile-430x932.png`
 
 **Interfaces:**
+
 - Consumes: deterministic screenshots and immutable reference pixels.
 - Produces: human-readable classification and machine-readable metrics.
 
@@ -136,6 +144,7 @@ Classify every remaining region as cosmetic or rendering-only with direct visual
 ### Task 5: Full verification and security gate
 
 **Files:**
+
 - Modify only files required to fix failures found by the commands below.
 
 - [ ] **Step 1: Run formatting**
@@ -157,4 +166,3 @@ Run `npm audit --omit=dev` and scan the diff for secrets and forbidden TypeScrip
 - [ ] **Step 5: Review the final diff**
 
 Run `git status`, `git diff`, and `git diff --check`; confirm only scoped files changed and no source reference or approved asset was modified.
-

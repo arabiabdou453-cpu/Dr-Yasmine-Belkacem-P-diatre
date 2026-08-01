@@ -25,4 +25,8 @@ test("page contains the pediatric care sections", async () => {
   assert.match(content, /Urgences pédiatriques/);
   assert.match(form, /name="phone"/);
   assert.match(form, /Icon name="user"/);
+  assert.match(source, /summary className="navigation-toggle"/);
+  assert.match(source, /href="tel:0555123456"/);
+  assert.doesNotMatch(source, /clinic-highlight/);
+  assert.doesNotMatch(source, /clinic-pediatre\.png/);
 });
